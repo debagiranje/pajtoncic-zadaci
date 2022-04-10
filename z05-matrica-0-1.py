@@ -17,36 +17,39 @@ zamijenjene nulama.
 popravi ovo
 
 """
-from itertools import product
+
 import random
 
 def matrica(n):
     a = []
-    
     for i in range(n):
         for j in range(n):
             a.append(random.randint(0, 1))
     return a
 
-def jelKec(poz):
-    if poz == 1:
-        return True
-    else:
-        return False
 
-def kretko(y,x):
-    moves = list(product([x-1, x+1],[y-1, y+1])) 
-    moves = [(x,y) for x,y in moves if x >= 0 and y >= 0 and x < n and y < n]
-    return moves
+def kretko(x,y):
+    lista = [[i,j] for i in [x+1, x, x-1] for j in [y-1, y, y+1]]
+    nova = [[x,y] for x,y in lista if x < 0 and y < 0 and x < 3 and y < 3]
+    return nova
+    
 
 n = 3
 a = matrica(3)
+x =  1
+y = 1
 
-for i in range(n):
-    for j in range(n):
-        if a[j] == 0:
-            a[j] = kretko(i,j)
-        
+kopija = [0 for i in a]
 
-print(kretko(i,j))
+
+lista = [[i,j] for i in [x+1, x, x-1] for j in [y-1, y, y+1]]
+nova = [[x,y] for x,y in lista if x >= 0 and y >= 0 and x < 3 and y < 3]
+nova.remove([x,y])
+
+for i in range(lista):
+    for j in range(lista[0]):
+        if nova[i][j]    
+
 print(a)
+print(nova)
+print(kopija)

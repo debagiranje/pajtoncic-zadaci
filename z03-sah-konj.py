@@ -11,7 +11,7 @@ Sa tastature se unosi trenutna pozicija konja na sahovskoj ploci
 Ispisati sve moguce poteze konja koji mogu da se odigraju sa trenutne pozicije.
 
 """
-from itertools import product
+
 
 slova = ["A", "B", "C", "D", "E", "F", "G", "H"]
 brojevi = ["1", "2", "3", "4", "5", "6", "7", "8"]
@@ -26,18 +26,18 @@ y0 = slova.index(curr[0])
 x0 = brojevi.index(curr[1])
 
 
-
-def knight_moves(y,x):
-    moves = list(product([x-1, x+1],[y-2, y+2])) + list(product([x-2,x+2],[y-1,y+1]))
+def konj(y,x):
+    list3 = [(i,j) for i in [x-1, x+1] for j in [y-2, y+2]]
+    list4 = [(i,j) for i in [x-2, x+2] for j in [y-1, y+1]]
+    moves = list3 + list4
     moves = [(x,y) for x,y in moves if x >= 0 and y >= 0 and x < 8 and y < 8]
     return moves
 
-lista = knight_moves(x0, y0)
+lista = konj(x0, y0)
 
-rezultat = []
+nova = []
 for i in lista:
-    trazeni = i
-    rezultat.append((slova[trazeni[0]]+brojevi[trazeni[1]]))
+    nova.append(slova[i[0]] + brojevi[i[1]])
 
-print("broj mogucih koraka je", len(rezultat), "a to su:")
-print(rezultat)
+print("broj mogucih koraka je", len(lista), "a to su:")
+print(nova)

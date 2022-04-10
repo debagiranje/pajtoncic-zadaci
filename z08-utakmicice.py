@@ -4,6 +4,20 @@ Created on Sat Apr  2 08:15:56 2022
 
 @author: Angie
 
+
+if __name__ == "__main__":
+    
+    with open("ulaz.txt", "w") as f:
+        
+        while True:
+            unos = input("unesite timove i rezultate: ")
+            f.write(unos+"\n")
+            if unos.strip() in "":
+                break
+            
+    f.close()
+    
+
 """
 from functools import reduce
 
@@ -14,7 +28,7 @@ def pobjedica(timovi, rez):
     pobjede = dict()
     
     i = 0
-    while i < len(timovi):
+    while i < len(timovi)-1:
         
         ime1 = timovi[i]
         ime2 = timovi[i+1]
@@ -41,7 +55,7 @@ def gubicici(timovi, rez):
         
     i = 0
 
-    while i < len(timovi):
+    while i < len(timovi)-1:
         
         ime1 = timovi[i]
         ime2 = timovi[i+1]
@@ -67,7 +81,7 @@ def nerijeseno(timovi, rez):
     
     i = 0
 
-    while i < len(timovi):
+    while i < len(timovi)-1:
         
         ime1 = timovi[i]
         ime2 = timovi[i+1]
@@ -81,22 +95,10 @@ def nerijeseno(timovi, rez):
                 ner[ime2] = 1
         
         i+=2
-    
+
     return ner
 
 
-if __name__ == "__main__":
-    
-    with open("ulaz.txt", "w") as f:
-        
-        while True:
-            unos = input("unesite timove i rezultate: ")
-            f.write(unos+"\n")
-            if unos.strip() in "":
-                break
-            
-    f.close()
-    
     
     with open("ulaz.txt", "r") as f:
         rezultati = f.readlines()
