@@ -1,0 +1,4 @@
+prvi:drugi 2:1
+drugi:treci 1:1
+prvi:treci 1:1
+

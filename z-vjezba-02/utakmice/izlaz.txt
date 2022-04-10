@@ -1,0 +1,12 @@
+tim: prvi 
+	pobjeda: 1 
+	gubitaka: 0 
+	nerijesenih: 2 
+tim: drugi 
+	pobjeda: 0 
+	gubitaka: 1 
+	nerijesenih: 1 
+tim: treci 
+	pobjeda: 0 
+	gubitaka: 0 
+	nerijesenih: 2 

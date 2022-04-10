@@ -34,8 +34,4 @@ def sumica(nova):
         suma_L.append(suma)
     return suma_L
 
-def merge(nova):
-    
-
-n = trans(mat)
-print(n)
+# TODO zavrsi ovo
